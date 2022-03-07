@@ -1,0 +1,8 @@
+n = (input())
+if len(n) != 1000:
+    if "111111" in str(n):
+        print("Sorry, Sorry!")
+    elif "000000" in str(n):
+       print("Sorry, Sorry!")
+    else:
+        print("Good Luck!")
