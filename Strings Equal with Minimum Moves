@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+using namespace std;
+int minimunMoves(string arr[], int n)
+{
+    int res = INT_MAX;
+    for(int i=0;i<n;i++)
+    {
+        int count = 0;
+        for(int j=0;j<n;j++)
+        {
+            string temp = arr[j] + arr[j];
+            int index = temp.find(arr[i]);
+            if(index == string::npos)
+                return -1;
+            count += index;
+        }
+        res = min(count , res);
+    }
+    return res;
+}
+int main()
+{
+    int n;
+    cin >> n;
+    string arr[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    cout<<minimunMoves(arr,n);
+    return 0;
+}
